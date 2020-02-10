@@ -36,11 +36,13 @@ pipeline {
                     args '-u root'
                 }
             }
+            environment {
+               TEST_VAR = 'haha'		
+	    }
             steps {
                 sh (script:'''#!/bin/bash
 			      . /root/.bashrc
-                              echo 'testing output'
-                              sleep 10
+                              echo 'testing variables: $TEST_VAR'
 			      pyinstaller --onefile sources/add2vals.py
 		            ''',
 		    label:'pyinstaller')
