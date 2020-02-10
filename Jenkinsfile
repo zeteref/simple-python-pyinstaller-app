@@ -40,7 +40,7 @@ pipeline {
                TEST_VAR = 'haha'		
 	    }
             steps {
-                sh (script:'''eval "$($HOME/.pyenv/bin/pyenv init -)"
+                sh (script:'''eval '$($HOME/.pyenv/bin/pyenv init -)'
 			      pyinstaller --onefile sources/add2vals.py
 		            ''')
 
