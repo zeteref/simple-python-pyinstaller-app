@@ -42,7 +42,7 @@ pipeline {
             steps {
                 sh (script:'''#!/bin/bash
 			      . /root/.bashrc
-                              echo 'testing variables: $TEST_VAR'
+                              echo "testing variables: $TEST_VAR"
 			      pyinstaller --onefile sources/add2vals.py
 		            ''',
 		    label:'pyinstaller')
