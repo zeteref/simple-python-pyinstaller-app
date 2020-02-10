@@ -40,7 +40,7 @@ pipeline {
                TEST_VAR = 'haha'		
 	    }
             steps {
-	       sh /root/.pyenv/bin/pyenv exec pyinstaller --onefile sources/add2vals.py
+	       sh '/root/.pyenv/bin/pyenv exec pyinstaller --onefile sources/add2vals.py'
 
             }
             post {
