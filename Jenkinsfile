@@ -37,10 +37,10 @@ pipeline {
                 }
             }
             steps {
-                sh (script:'''
-			. /root/.bashrc
-			pyinstaller --onefile sources/add2vals.py
-		   ''',
+                sh (script:'''#!/bin/bash
+			      . /root/.bashrc
+			      pyinstaller --onefile sources/add2vals.py
+		            ''',
 		    label:'pyinstaller')
 
             }
