@@ -39,6 +39,7 @@ pipeline {
             steps {
                 sh (script:'''#!/bin/bash
 			      . /root/.bashrc
+                              echo 'testing output'
 			      pyinstaller --onefile sources/add2vals.py
 		            ''',
 		    label:'pyinstaller')
