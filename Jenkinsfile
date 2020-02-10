@@ -40,12 +40,9 @@ pipeline {
                TEST_VAR = 'haha'		
 	    }
             steps {
-                sh (script:'''#!/bin/bash
-			      . /root/.bashrc
-                              echo "testing variables: $TEST_VAR"
+                sh (script:'''eval "$($HOME/.pyenv/bin/pyenv init -)"
 			      pyinstaller --onefile sources/add2vals.py
-		            ''',
-		    label:'pyinstaller')
+		            ''')
 
             }
             post {
